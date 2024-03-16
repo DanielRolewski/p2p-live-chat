@@ -9,6 +9,3 @@
 * connection with two clients without server
 * design & UI
 * tests
-* daniel ssie
-* test
-
