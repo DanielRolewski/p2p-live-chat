@@ -9,4 +9,4 @@
 * connection with two clients without server
 * design & UI
 * tests
-* PARZYĆ WODE PODCZAS SRANIA BY WBIĆ NA DSC SZYBCIEJ LOL
+
