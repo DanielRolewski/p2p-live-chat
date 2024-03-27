@@ -1,14 +1,15 @@
 # P2P Live Chat (WIP)
 #### Student project with peer-to-peer live chat in Laravel.
 
-### To Do:
-* more complex plan
-* basic project
-* connect LiveWire
-* chatting window
-* connection with two clients without server
-* design & UI
-* tests
+### To Do
+- [ ] implement rooms with chat
+- [ ] redirect `/` to `/chats/{id}` and generate random `id` parameter
+- [ ] sharing chats via link
+- [ ] implement adding new messages on chat
+- [ ] implement real-time showing messages on chat
+- [ ] add nicknames for users & random avatars via faker gravatar
+- [ ] UI design for chat
+- [ ] tests for all application
 
 ### Instruction
 * wersja php <b>8.3.4</b>
