@@ -4,9 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('rooms.create');
 });
 
-// Route::get('/chats/{id}', function () {
-//     return view('test');
-// });
+Route::get('/rooms', function () {
+    return view('rooms.index');
+});
