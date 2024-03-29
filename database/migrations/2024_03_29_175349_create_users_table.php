@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nickname', 100);
+            $table->integer('chat_id');
+            $table->foreign('chat_id')->references('id')->on('rooms');
         });
     }
 
