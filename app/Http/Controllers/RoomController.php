@@ -25,6 +25,7 @@ class RoomController extends Controller
      * Create room & user and then saves them down in the database.
      *
      * @param Request $request
+     *
      * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
@@ -39,11 +40,7 @@ class RoomController extends Controller
             $room_id = Room::create([
                 'user_number' => 1,  // Must be 1, because of "if (users_number < 1) then delete" statement.
             ])->id;
-        } catch (QueryException $exception) {
-            return $exception->errorInfo;
-        }
 
-        try {
             $user_id = User::create([
                 'nickname' => $nickname,
                 'chat_id' => $room_id,
@@ -63,9 +60,10 @@ class RoomController extends Controller
     }
 
     /**
-     * Check if session(user_id) is not empty and redirect to correct route or view.
+     * Check if session('user_id') is not empty and redirect to correct route or view.
      *
      * @param Int $room_id
+     *
      * @return View|RedirectResponse
      */
     public function show(int $room_id): View|RedirectResponse
@@ -80,7 +78,7 @@ class RoomController extends Controller
 
         return view('rooms.show', [
             'id' => $room_id,
-            'nickname' => session('nickname')
+            'nickname' => session('nickname'),
         ]);
     }
 }
