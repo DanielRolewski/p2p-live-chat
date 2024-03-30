@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use Illuminate\View\View;
 
+/**
+ * @extends Controller
+ */
 class RoomController extends Controller
 {
     /**
