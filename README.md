@@ -2,12 +2,13 @@
 #### Student project with peer-to-peer live chat in Laravel.
 
 ### To Do
-- [ ] implement rooms with chat
-- [ ] redirect `/` to `/chats/{id}` and generate random `id` parameter
-- [ ] sharing chats via link
+- [X] implement rooms with chat
+- [X] redirect `/` to `/chats/{id}` and generate random `id` parameter
+- [X] sharing chats via link
 - [ ] implement adding new messages on chat
 - [ ] implement real-time showing messages on chat
-- [ ] add nicknames for users & random avatars via faker gravatar
+- [X] add nicknames for users
+- [ ] random avatars via faker gravatar
 - [ ] UI design for chat
 - [ ] tests for all application
 
