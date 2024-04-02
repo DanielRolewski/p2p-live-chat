@@ -54,7 +54,7 @@
 
         .create-container input,
         .create-container button {
-            width: 100%; /* Szerokość równa szerokości kontenera */
+            width: 200px; /* Szerokość równa szerokości kontenera */
             padding: 10px;
             margin-bottom: 10px; /* Dodajemy odstęp między polem input a przyciskiem */
             background-color: #fff;
@@ -63,11 +63,17 @@
             border: none;
             outline: none;
         }
+        form button {
+            align-items: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
         .create-container button {
             background-color:  #4e68d6;
-            width: 50%;
-            align: center;
+            align-self: center;
             color: #fff;
             cursor: pointer;
             transition: background-color 0.3s ease;
