@@ -24,14 +24,15 @@
 
         .chat-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: end;
+            align-items: end;
             height: calc(100vh - 50px); /* Uwzględnienie wysokości nagłówka */
             padding-top: 20px; /* Dodatkowy odstęp od góry */
         }
 
         .chat-window {
             width: 80%;
+            height:90%;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -39,6 +40,11 @@
 
         .messages {
             max-height: 70vh; /* Maksymalna wysokość obszaru wiadomości */
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 40px;
+
+            border-radius: 20px;
             overflow-y: auto;
             padding: 10px;
             background-color: #fff; /* Kolor tła obszaru wiadomości */
@@ -85,6 +91,8 @@
         .input-box {
             display: flex;
             padding: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Cień dla pola wejściowego */
