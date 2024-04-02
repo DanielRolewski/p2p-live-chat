@@ -24,7 +24,7 @@
 
         .chat-container {
             display: flex;
-            justify-content: end;
+            justify-content: center;
             align-items: end;
             height: calc(100vh - 50px); /* Uwzględnienie wysokości nagłówka */
             padding-top: 20px; /* Dodatkowy odstęp od góry */
@@ -32,7 +32,7 @@
 
         .chat-window {
             width: 80%;
-            height:90%;
+            height:100%;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
