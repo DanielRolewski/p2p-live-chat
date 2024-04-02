@@ -26,8 +26,9 @@
             display: flex;
             justify-content: center;
             align-items: end;
-            height: calc(100vh - 50px); /* Uwzględnienie wysokości nagłówka */
+            height: calc(90vh - 50px); /* Uwzględnienie wysokości nagłówka */
             padding-top: 20px; /* Dodatkowy odstęp od góry */
+            padding-bottom: 20px;
         }
 
         .chat-window {
