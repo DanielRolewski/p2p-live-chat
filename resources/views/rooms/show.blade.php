@@ -3,139 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messenger-like Chat App</title>
-    <style>
-        /* CSS Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5; /* Kolor tła */
-        }
-
-        .header {
-            height: 50px;
-            width: 100%;
-            background-color: #4e68d6;
-            color: #fff;
-            text-align: center;
-            line-height: 50px;
-        }
-
-        .chat-container {
-            display: flex;
-            justify-content: center;
-            align-items: end;
-            height: calc(90vh - 50px); /* Uwzględnienie wysokości nagłówka */
-            padding-top: 20px; /* Dodatkowy odstęp od góry */
-            padding-bottom: 20px;
-        }
-
-        .chat-window {
-            width: 80%;
-            height:100%;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .messages {
-            max-height: 70vh; /* Maksymalna wysokość obszaru wiadomości */
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-top: 40px;
-
-            border-radius: 20px;
-            overflow-y: auto;
-            padding: 10px;
-            background-color: #fff; /* Kolor tła obszaru wiadomości */
-            margin-bottom: 20px;
-        }
-
-        .message-container {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 10px;
-        }
-
-        .avatar {
-            width: 30px; /* Rozmiar awatara */
-            height: 30px; /* Rozmiar awatara */
-            border-radius: 50%;
-            background-color: #000;
-            margin-right: 10px;
-            flex-shrink: 0; /* Zapobieganie zmnianie rozmiaru awatara */
-        }
-
-        .message-bubble {
-            max-width: 70%;
-            border-radius: 20px;
-            padding: 10px;
-            word-wrap: break-word;
-            position: relative;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Cień dla dymka */
-        }
-
-        .message.sent .message-bubble {
-            background-color: #0000ff; /* Kolor tła dymka dla wiadomości wysłanych przez użytkownika */
-            color: #fff;
-            align-self: flex-end;
-            text-align: left; /* Wiadomości wysłane wyświetlane po lewej stronie */
-        }
-
-        .message.received .message-bubble {
-            background-color: #7d93a6; /* Kolor tła dymka dla wiadomości otrzymanych przez użytkownika */
-            color: #000;
-            align-self: flex-start; /* Wiadomości otrzymane wyświetlane po lewej stronie */
-        }
-
-        .input-box {
-            display: flex;
-            padding: 10px;
-            margin-left: 20px;
-            margin-right: 20px;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Cień dla pola wejściowego */
-        }
-
-        .input-box input {
-            flex: 1;
-            padding: 10px;
-            border-radius: 20px;
-            border: none;
-            margin-right: 10px;
-            outline: none;
-        }
-
-        .input-box button {
-            padding: 10px 20px;
-            background-color: #4e68d6;
-            color: #fff;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .input-box button:hover {
-            background-color: #4054b2;
-        }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Live Chat - Chat Number: {{ $id }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href={{ asset('css/show-chat.css') }}>
 </head>
 <body>
-    <div class="header">LIVE CHAT</div>
-    <div class="chat-container">
-        <div class="chat-window">
-            <div class="messages" id="messages">
-                <!-- Tutaj będą wyświetlane wiadomości -->
-            </div>
-            <div class="input-box">
-                <input type="text" id="message-input" placeholder="Wpisz wiadomość...">
-                <button onclick="sendMessage()">Wyślij</button>
+<nav>
+    <svg class="logo" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_ii_28_78)">
+            <circle cx="28" cy="28" r="25" transform="rotate(-180 28 28)" fill="#FCB2A5"/>
+        </g>
+        <circle cx="28" cy="28" r="26.5" transform="rotate(-180 28 28)" stroke="#222944" stroke-width="3"/>
+        <defs>
+            <filter id="filter0_ii_28_78" x="-3" y="-10" width="59" height="69" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="-13"/>
+                <feGaussianBlur stdDeviation="5"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.866667 0 0 0 0 0.576471 0 0 0 0 0.643137 0 0 0 1 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow_28_78"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feMorphology radius="7" operator="dilate" in="SourceAlpha" result="effect2_innerShadow_28_78"/>
+                <feOffset dx="-4" dy="15"/>
+                <feGaussianBlur stdDeviation="5"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.992157 0 0 0 0 0.996078 0 0 0 0 1 0 0 0 1 0"/>
+                <feBlend mode="normal" in2="effect1_innerShadow_28_78" result="effect2_innerShadow_28_78"/>
+            </filter>
+        </defs>
+    </svg>
+</nav>
+    <main>
+        <div class="window">
+            <div class="form-container">
+                <div class="banner">
+                    <span>live chat</span>
+                    <hr>
+                </div>
+                <div class="messages" id="messages">
+                    <div class="you message"><span class="nickname">you: </span><p>test test test</p></div>
+                    <div class="someone message"><span class="nickname">{{ $nickname }}: </span><p>super test super test</p></div>
+                </div>
+                <div class="buttons-container">
+                    <input type="text" id="message-input" name="message" placeholder="send message.." maxlength="35">
+                    <button onclick="sendMessage()">submit</button>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <script>
         // JavaScript Code
