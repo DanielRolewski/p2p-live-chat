@@ -1,3 +1,4 @@
+/* General styles for many elements */
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +9,8 @@
     font-style: normal;
     color: #222944;
 }
-
 body {
     background-color: #E7F2F8;
-}
-
-.logo {
-    position: absolute;
-    margin: 20px 0 0 40px;
-    transition: filter 5s linear 100ms;
-}
-
-.logo:hover {
-    filter: hue-rotate(1080deg);
 }
 main {
     width: 100vw;
@@ -29,16 +19,56 @@ main {
     justify-content: center;
     align-items: center;
 }
+span {
+    flex-basis: auto;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+hr {
+    flex-grow: 8;
+    margin-left: 20px;
+    margin-right: 10px;
+    height: 3px;
+    background-color: #222944;
+    border-radius: 50px;
+}
+::placeholder {
+    color: #A7B5EB;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #A7B5EB;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+    background: #5E6788;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3E4459;
+}
 
+/* Logo */
+.logo {
+    position: absolute;
+    margin: 20px 0 0 40px;
+    transition: filter 5s linear 100ms;
+}
+.logo:hover {
+    filter: hue-rotate(1080deg);
+}
+
+/* Window containers */
 .window {
     width: 80%;
     height: 80%;
     border-radius: 50px;
     border: 3px solid #222944;
     background-color: #FEFEFE;
-    box-shadow: -5px 10px 0px 0px #D1D8F7;
+    box-shadow: -5px 10px 0 0 #D1D8F7;
 }
-
 .form-container {
     height: 100%;
     display: grid;
@@ -46,6 +76,7 @@ main {
     padding: 0 50px 0 50px;
 }
 
+/* Window banner */
 .banner {
     margin-top: 30px;
     height: 30px;
@@ -55,33 +86,10 @@ main {
     justify-content: space-between;
 }
 
-.buttons-container {
-    align-self: end;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    justify-content: space-between;
-}
-
-span {
-    flex-basis: auto;
-    flex-wrap: nowrap;
-    text-align: center;
-}
-
-hr {
-    flex-grow: 8;
-    margin-left: 20px;
-    margin-right: 10px;
-    height: 3px;
-    background-color: #222944;
-    border-radius: 50px;
-}
+/* Showing messages section */
 .messages {
-    overflow-y:scroll;
-    overflow-x:hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin-bottom: 20px;
 }
 .message {
@@ -91,7 +99,7 @@ hr {
     border-radius: 30px;
     width: 90%;
     color: #222944;
-    display:flex;
+    display: flex;
     justify-content: left;
     padding-left: 20px;
 }
@@ -105,7 +113,7 @@ hr {
     align-self: flex-start;
 }
 .you {
-    background: rgb(253,158,164);
+    background: #FD9EA4;
     background: linear-gradient(20deg, #FD9EA4 0%, #FAD5A3 100%);
 }
 .someone {
@@ -114,63 +122,41 @@ hr {
 .someone .nickname {
     color: #A7B5EB;
 }
-.buttons-container input, .buttons-container button {
+
+/* Sending messages section */
+.buttons-container {
+    align-self: end;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+}
+.buttons-container input,
+.buttons-container button {
     height: 50px;
     border: 3px solid #222944;
     border-radius: 30px;
 }
-
 .buttons-container input {
     align-items: center;
     width: 75%;
     padding-left: 20px;
 }
-
-::placeholder {
-    color: #A7B5EB;
-}
-
 .buttons-container button {
     color: #222944;
     width: 20%;
-    background: rgb(253,158,164);
+    background: #FDA49E;
     background: linear-gradient(20deg, #FD9EA4 0%, #FAD5A3 100%);
     align-items: center;
     transition: box-shadow 0.2s linear, color 0.2s linear;
+    height: 55px;
 }
-
-button:hover {
+.buttons-container button:hover {
     transition: filter 5s linear 100ms, color 0.2s linear, box-shadow 0.2s linear;
     color: white;
     box-shadow: -5px 8px 0 0 #D1D8F7;
     filter: hue-rotate(1080deg);
 }
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #A7B5EB;
-    border-radius: 20px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #5E6788;
-    border-radius: 20px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #3E4459;
-}
-
 
