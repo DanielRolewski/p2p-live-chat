@@ -51,10 +51,12 @@ class UserController extends Controller
             return $exception->errorInfo;
         }
 
+        // Store data in session.
         session([
             'user_id' => $user_id,
-            'nickname' => $request->input('nickname'),
         ]);
+
+        setcookie("nickname", $request->input('nickname'), time() + 3600 * 60);
 
         return redirect('/rooms/' . session('room_id'));
     }
