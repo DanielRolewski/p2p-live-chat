@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href={{ asset('css/create-form.css') }}>
+    @vite(['resources/css/create-form.css'])
 </head>
 <body>
     <nav>
