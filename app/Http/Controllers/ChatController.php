@@ -23,6 +23,8 @@ class ChatController extends Controller
         $message = $request->input('message');
         MessageSent::dispatch($message);
 
-        return response()->json(['success' => true, 'message' => 'Message ' . $message . ' sent successfully']);
+        return response()->json(['success' => true, 'message' => 'Message ' . $message . ' sent successfully'])
+            ->header('Access-Control-Allow-Origin', '*')
+            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
 }
