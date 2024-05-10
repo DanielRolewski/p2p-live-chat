@@ -29,9 +29,9 @@
 * w cmd wpisz `php artisan migrate`. Jeśli wyskoczy ci:
     - <b>`APPLICATION IN PRODUCTION`<b> i niżej `Are you sure you want to run this command? (yes/no)` wpisz <b>`yes`</b>
     - jeśli potem wyskoczy ci `Would you like to create it? (yes/no)` wpisz <b>`yes`</b>
-* w głównym folderze `p2p-live-chat` zrób plik <b>`.env`</b> i wklej tekst z linka: <a href="www.pastebin.com/t29uBmDk">www.pastebin.com/t29uBmDk</a>. Hasło do linka jest takie samo jak do pdfów.
+* w głównym folderze `p2p-live-chat` zrób plik <b>`.env`</b> i wklej tekst z linka: <a href="www.pastebin.com/t29uBmDk">www.pastebin.com/t29uBmDk </a>. Hasło do linka jest takie samo jak do pdfów.
 * po ogarnięciu poprzednich punktów, w cmd wejdź do folderu `p2p-live-chat` i wpisz: `php artisan serve`
 * w kolejnym oknie terminala wpisz komendę: `php artisan reverb:start`
-* w kolejnym oknie terminala wpisz komendę: `npm run production`
+* w kolejnym oknie terminala wpisz komendę: `npm run dev`
 * w przeglądarce wejdź w `localhost:8000` i zobacz czy ładuje się bazowy projekt Laravela.
 
