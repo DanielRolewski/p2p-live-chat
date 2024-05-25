@@ -57,7 +57,8 @@ class RoomController extends Controller
             'room_id' => $room_id,
         ]);
 
-        setcookie("nickname", $nickname, time()+3600*60);
+        setrawcookie("nickname", $nickname, time()+3600*60);
+
         return redirect('/rooms/' . $room_id);
     }
 

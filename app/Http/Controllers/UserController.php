@@ -56,7 +56,7 @@ class UserController extends Controller
             'user_id' => $user_id,
         ]);
 
-        setcookie("nickname", $request->input('nickname'), time() + 3600 * 60);
+        setrawcookie("nickname", $request->input('nickname'), time() + 3600 * 60);
 
         return redirect('/rooms/' . session('room_id'));
     }
